@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { db } from "./../config/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { v4 } from "uuid";
@@ -7,7 +8,8 @@ import { useAuth } from "./../contexts/AuthContext";
 
 function JrnlForm() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  const { currentUser } = useAuth();
+  const { currentUser, logOut } = useAuth();
+  const navigate = useNavigate();
 
   async function createEntry(data, event) {
     event.preventDefault();
@@ -25,12 +27,20 @@ function JrnlForm() {
     })
   }
 
+  async function handleLogOut() {
+    try {
+      await logOut();
+      navigate("/");
+    } catch {
+    }
+  }
+
   return(
     <>
       <div className="row align-items-center justify-content-center" style={{minHeight: "100vh"}}>
         <div className="col-lg-6 col-md-10">
           <form>
-            <textarea
+            <input
               type="text"
               rows="5"
               placeholder="note"
@@ -46,7 +56,7 @@ function JrnlForm() {
               <button onClick={ null } className="btn btn-outline-secondary mt-5 w-100">read</button>
             </div>
             <div className="col">
-              <button onClick={ null } className="btn btn-outline-secondary mt-5 w-100">logout</button>
+              <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100">logout</button>
             </div>
           </div>
 
