@@ -1,8 +1,9 @@
+import JrnlForm from "./components/JrnlForm";
 
 function App() {
   return (
-    <div className="App">
-      Hello there
+    <div className="container bg-dark">
+      <JrnlForm />
     </div>
   );
 }
