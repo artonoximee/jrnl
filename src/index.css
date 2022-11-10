@@ -1,18 +1,18 @@
 body {
-  background-color: #212529 !important;
+  background-color: #121214 !important;
 }
 
 .form-control, .btn {
-  box-shadow:  11px 11px 22px #1c1f23,
-             -11px -11px 22px #262b2f;
+  box-shadow:  14px 14px 21px #070708,
+             -14px -14px 21px #1d1d20;
 }
 
 input[type=text], textarea {
-  background-color: #2a2b2f !important;
+  background-color: #252529 !important;
 }
 
 .form-control:focus, .form-select:focus {
   border-color: #555555 !important;
-  box-shadow:  11px 11px 22px #1c1f23,
-             -11px -11px 22px #262b2f !important;
+  box-shadow:  14px 14px 21px #070708,
+             -14px -14px 21px #1d1d20 !important;
 } 
