@@ -2,7 +2,7 @@ import JrnlForm from "./components/JrnlForm";
 
 function App() {
   return (
-    <div className="container bg-dark">
+    <div className="container">
       <JrnlForm />
     </div>
   );
