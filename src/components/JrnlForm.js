@@ -4,8 +4,6 @@ import { db } from "./../config/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { v4 } from "uuid";
 
-import "./JrnlForm.css";
-
 function JrnlForm() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
