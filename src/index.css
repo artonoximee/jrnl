@@ -1,3 +1,18 @@
 body {
   background-color: #212529 !important;
 }
+
+.form-control, .btn {
+  box-shadow:  11px 11px 22px #1c1f23,
+             -11px -11px 22px #262b2f;
+}
+
+input[type=text], textarea {
+  background-color: #2a2b2f !important;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #555555 !important;
+  box-shadow:  11px 11px 22px #1c1f23,
+             -11px -11px 22px #262b2f !important;
+}
