@@ -7,6 +7,7 @@ import { useAuth } from "./../contexts/AuthContext";
 // import ListItem from "./ListItem";
 // import UpdateModal from "./UpdateModal";
 // import DeleteModal from "./DeleteModal";
+import ReadItem from "./ReadItem";
 import sortByCreationDate from "./../helpers/sortByCreationDate";
 
 function List() {
@@ -39,10 +40,15 @@ function List() {
 
   return (
     <>
-      {
-        entries &&
-        entries.map((entry) => <p>{ entry.content }</p>)
-      }
+      <div className="row align-items-center justify-content-center" style={{minHeight: "100vh"}}>
+        <div className="col-lg-6 col-md-10">
+          {
+            entries &&
+            entries.map((entry) => <ReadItem key={ entry.id } entry={ entry } />)
+          }
+        </div>
+      </div>
+      
 
       {/* { openUpdateModal && (
         <UpdateModal setOpenUpdateModal={ setOpenUpdateModal } selectedProject={ selectedProject } setReload={ setReload } />

@@ -5,12 +5,12 @@ body {
   font-family: 'Fira Code', monospace !important;
 }
 
-.form-control, .btn {
+.form-control, .btn, .card {
   box-shadow:  14px 14px 21px #070708,
              -14px -14px 21px #1d1d20;
 }
 
-input[type=text], textarea {
+input[type=text], textarea, .card {
   background-color: #252529 !important;
 }
 
