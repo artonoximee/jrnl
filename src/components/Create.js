@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { db } from "./../config/firebase";
+import { Link, useNavigate } from "react-router-dom";
+import { db } from "../config/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { v4 } from "uuid";
-import { useAuth } from "./../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 
 function JrnlForm() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -53,7 +53,7 @@ function JrnlForm() {
 
           <div className="row">
             <div className="col">
-              <button onClick={ null } className="btn btn-outline-secondary mt-5 w-100">read</button>
+              <Link to="/read" className="btn btn-outline-secondary mt-5 w-100">read</Link>
             </div>
             <div className="col">
               <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100">logout</button>
