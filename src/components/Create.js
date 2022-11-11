@@ -40,22 +40,22 @@ function JrnlForm() {
       <div className="row align-items-center justify-content-center" style={{minHeight: "100vh"}}>
         <div className="col-lg-6 col-md-10">
           <form>
-            <input
+            <textarea
               type="text"
               rows="5"
               placeholder="note"
-              className={ `mt-5 form-control text-light border-secondary ${ errors.content && "is-invalid border-danger" } ` }
+              className={ `form-control text-light border-secondary ${ errors.content && "is-invalid border-danger" } ` }
               { ...register("content", { required: true }) }
             />
 
-            <button onClick={ handleSubmit(createEntry) } className="btn btn-outline-secondary mt-5 mb-5 w-100">jrnl</button>
+            <button onClick={ handleSubmit(createEntry) } type="submit" className="btn btn-outline-secondary mt-5 w-100">jrnl</button>
           </form>
 
           <div className="row">
-            <div className="col">
+            <div className="col-9">
               <Link to="/read" className="btn btn-outline-secondary mt-5 w-100">read</Link>
             </div>
-            <div className="col">
+            <div className="col-3">
               <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100">logout</button>
             </div>
           </div>
