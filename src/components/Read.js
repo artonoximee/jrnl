@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect} from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { db } from "./../config/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useAuth } from "./../contexts/AuthContext";
@@ -11,7 +12,8 @@ import ReadItem from "./ReadItem";
 import sortByCreationDate from "./../helpers/sortByCreationDate";
 
 function List() {
-  const { currentUser } = useAuth();
+  const { currentUser, logOut } = useAuth();
+  const navigate = useNavigate();
   const [entries, setEntries] = useState();
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
@@ -34,6 +36,14 @@ function List() {
     setEntries(arr);
   }
 
+  async function handleLogOut() {
+    try {
+      await logOut();
+      navigate("/");
+    } catch {
+    }
+  }
+
   // function handleClickCreate() {
   //   setOpenCreateModal(true);
   // }
@@ -42,6 +52,15 @@ function List() {
     <>
       <div className="row align-items-center justify-content-center" style={{minHeight: "100vh"}}>
         <div className="col-lg-6 col-md-10">
+          <div className="row mb-5">
+            <div className="col-9">
+              <Link to="/create" className="btn btn-outline-secondary mt-5 w-100">create</Link>
+            </div>
+            <div className="col-3">
+              <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100">logout</button>
+            </div>
+          </div>
+
           {
             entries &&
             entries.map((entry) => <ReadItem key={ entry.id } entry={ entry } />)

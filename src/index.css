@@ -10,7 +10,7 @@ body {
              -14px -14px 21px #1d1d20;
 }
 
-input[type=text], textarea, .card {
+input[type=text], textarea, .card, .dropdown-menu {
   background-color: #252529 !important;
 }
 
