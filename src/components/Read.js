@@ -5,9 +5,8 @@ import { db } from "./../config/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useAuth } from "./../contexts/AuthContext";
 
-// import ListItem from "./ListItem";
 // import UpdateModal from "./UpdateModal";
-// import DeleteModal from "./DeleteModal";
+import DeleteModal from "./DeleteModal";
 import ReadItem from "./ReadItem";
 import sortByCreationDate from "./../helpers/sortByCreationDate";
 
@@ -15,10 +14,9 @@ function List() {
   const { currentUser, logOut } = useAuth();
   const navigate = useNavigate();
   const [entries, setEntries] = useState();
-  const [openCreateModal, setOpenCreateModal] = useState(false);
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
-  const [selectedProject, setSelectedProject] = useState();
+  const [selectedEntry, setSelectedEntry] = useState();
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
@@ -63,7 +61,7 @@ function List() {
 
           {
             entries &&
-            entries.map((entry) => <ReadItem key={ entry.id } entry={ entry } />)
+            entries.map((entry) => <ReadItem key={ entry.id } entry={ entry } setOpenDeleteModal={ setOpenDeleteModal } setSelectedEntry={ setSelectedEntry } />)
           }
         </div>
       </div>
@@ -71,11 +69,11 @@ function List() {
 
       {/* { openUpdateModal && (
         <UpdateModal setOpenUpdateModal={ setOpenUpdateModal } selectedProject={ selectedProject } setReload={ setReload } />
-      )}
+      )} */}
 
       { openDeleteModal && (
-        <DeleteModal setOpenDeleteModal={ setOpenDeleteModal } selectedProject={ selectedProject } setReload={ setReload } />
-      )} */}
+        <DeleteModal setOpenDeleteModal={ setOpenDeleteModal } selectedEntry={ selectedEntry } setReload={ setReload } />
+      )}
     </>
   )
 }

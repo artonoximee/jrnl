@@ -1,9 +1,15 @@
 import React from "react";
-import ReactTextFormat from 'react-text-format';
+import ReactTextFormat from "react-text-format";
+import { Link } from "react-router-dom";
 
 function ReadItem(props) {
+  const { setOpenDeleteModal, setSelectedEntry } = props;
   const entry = props.entry;
 
+  function handleClickDelete(e) {
+    setSelectedEntry(entry.id);
+    setOpenDeleteModal(true);
+  }
 
   return (
     <div className="card border-secondary text-bg-dark mb-5">
@@ -20,12 +26,12 @@ function ReadItem(props) {
             </div>
             <div className="col text-end">
               <div className="dropdown">
-                <a className="dropdown-toggle text-secondary text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <Link className="dropdown-toggle text-secondary text-decoration-none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   ⚙️
-                </a>
+                </Link>
                 <ul className="dropdown-menu dropdown-menu-dark border-secondary">
-                  <li><a className="dropdown-item" href="#">modify</a></li>
-                  <li><a className="dropdown-item" href="#">destroy</a></li>
+                  <li><Link className="dropdown-item">modify</Link></li>
+                  <li><Link onClick={handleClickDelete} className="dropdown-item">destroy</Link></li>
                 </ul>
               </div>
             </div>
