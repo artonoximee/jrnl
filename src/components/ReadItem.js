@@ -10,12 +10,12 @@ function ReadItem(props) {
       <ul className="list-group list-group-flush">
         <li className="list-group-item border-secondary text-bg-dark">
           <div className="row">
-            <div className="col">
-              2022-11-10
+            <div className="col text-secondary">
+              { entry.createdAt.substring(8,10) }-{ entry.createdAt.substring(5,7) }-{ entry.createdAt.substring(0,4) }
             </div>
             <div className="col text-end">
               <div className="dropdown">
-                <a className="dropdown-toggle text-light text-decoration-none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a className="dropdown-toggle text-secondary text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   ⚙️
                 </a>
                 <ul className="dropdown-menu dropdown-menu-dark border-secondary">
