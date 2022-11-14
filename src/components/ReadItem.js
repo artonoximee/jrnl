@@ -3,9 +3,14 @@ import ReactTextFormat from "react-text-format";
 import { Link } from "react-router-dom";
 
 function ReadItem(props) {
-  const { setOpenDeleteModal, setSelectedEntry } = props;
+  const { setOpenUpdateModal, setOpenDeleteModal, setSelectedEntry } = props;
   const entry = props.entry;
 
+  function handleClickUpdate(e) {
+    setSelectedEntry(entry);
+    setOpenUpdateModal(true);
+  }
+  
   function handleClickDelete(e) {
     setSelectedEntry(entry.id);
     setOpenDeleteModal(true);
@@ -30,7 +35,7 @@ function ReadItem(props) {
                   <i className="fa-solid fa-gear"></i>
                 </Link>
                 <ul className="dropdown-menu dropdown-menu-dark border-secondary">
-                  <li><Link className="dropdown-item">modify</Link></li>
+                  <li><Link onClick={handleClickUpdate} className="dropdown-item">modify</Link></li>
                   <li><Link onClick={handleClickDelete} className="dropdown-item">destroy</Link></li>
                 </ul>
               </div>

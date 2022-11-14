@@ -5,9 +5,9 @@ import { db } from "./../config/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useAuth } from "./../contexts/AuthContext";
 
-// import UpdateModal from "./UpdateModal";
-import DeleteModal from "./DeleteModal";
 import ReadItem from "./ReadItem";
+import UpdateModal from "./UpdateModal";
+import DeleteModal from "./DeleteModal";
 import sortByCreationDate from "./../helpers/sortByCreationDate";
 
 function List() {
@@ -42,10 +42,6 @@ function List() {
     }
   }
 
-  // function handleClickCreate() {
-  //   setOpenCreateModal(true);
-  // }
-
   return (
     <>
       <div className="row align-items-center justify-content-center" style={{minHeight: "100vh"}}>
@@ -58,18 +54,16 @@ function List() {
               <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100"><i className="fa-solid fa-right-from-bracket"></i></button>
             </div>
           </div>
-
           {
             entries &&
-            entries.map((entry) => <ReadItem key={ entry.id } entry={ entry } setOpenDeleteModal={ setOpenDeleteModal } setSelectedEntry={ setSelectedEntry } />)
+            entries.map((entry) => <ReadItem key={ entry.id } entry={ entry } setOpenUpdateModal={ setOpenUpdateModal } setOpenDeleteModal={ setOpenDeleteModal } setSelectedEntry={ setSelectedEntry } />)
           }
         </div>
       </div>
-      
 
-      {/* { openUpdateModal && (
-        <UpdateModal setOpenUpdateModal={ setOpenUpdateModal } selectedProject={ selectedProject } setReload={ setReload } />
-      )} */}
+      { openUpdateModal && (
+        <UpdateModal setOpenUpdateModal={ setOpenUpdateModal } selectedEntry={ selectedEntry } setReload={ setReload } />
+      )}
 
       { openDeleteModal && (
         <DeleteModal setOpenDeleteModal={ setOpenDeleteModal } selectedEntry={ selectedEntry } setReload={ setReload } />
