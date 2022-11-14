@@ -37,7 +37,7 @@ function Login() {
           <input 
             type="email"
             id="email"
-            className={ `form-control text-bg-dark border-secondary ${ errors.email && "is-invalid border-danger" }` }
+            className={ `form-control text-light border-secondary ${ errors.email && "is-invalid border-danger" }` }
             placeholder="email"
             { ...register("email", { required: true, pattern: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i }) }
           />

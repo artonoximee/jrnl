@@ -14,7 +14,7 @@ body {
   box-shadow: none;
 }
 
-input[type=text], textarea, .card, .dropdown-menu, .list-group-item {
+input[type=text], input[type=email], input[type=password], textarea, .card, .dropdown-menu, .list-group-item {
   background-color: #121214 !important;
 }
 
