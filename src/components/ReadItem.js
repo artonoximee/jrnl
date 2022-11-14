@@ -1,11 +1,16 @@
 import React from "react";
+import ReactTextFormat from 'react-text-format';
 
 function ReadItem(props) {
   const entry = props.entry;
+
+
   return (
     <div className="card border-secondary text-bg-dark mb-5">
       <div className="card-body">
-        { entry.content }
+        <ReactTextFormat>
+          { entry.content }
+        </ReactTextFormat>
       </div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item border-secondary text-bg-dark">

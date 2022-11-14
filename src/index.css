@@ -18,4 +18,12 @@ input[type=text], textarea, .card, .dropdown-menu {
   border-color: #555555 !important;
   box-shadow:  14px 14px 21px #070708,
              -14px -14px 21px #1d1d20 !important;
-} 
+}
+
+.rtfLink {
+  color: #ffffff;
+}
+
+.rtfLink:hover {
+  color: #6d757d;
+}
