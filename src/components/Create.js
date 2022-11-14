@@ -48,15 +48,15 @@ function JrnlForm() {
               { ...register("content", { required: true }) }
             />
 
-            <button onClick={ handleSubmit(createEntry) } type="submit" className="btn btn-outline-secondary mt-5 w-100">jrnl</button>
+            <button onClick={ handleSubmit(createEntry) } type="submit" className="btn btn-outline-secondary mt-5 w-100"><i className="fa-solid fa-pen"></i></button>
           </form>
 
           <div className="row">
             <div className="col-9">
-              <Link to="/read" className="btn btn-outline-secondary mt-5 w-100">read</Link>
+              <Link to="/read" className="btn btn-outline-secondary mt-5 w-100"><i className="fa-solid fa-eye"></i></Link>
             </div>
             <div className="col-3">
-              <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100">logout</button>
+              <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100"><i className="fa-solid fa-right-from-bracket"></i></button>
             </div>
           </div>
 

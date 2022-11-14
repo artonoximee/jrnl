@@ -30,7 +30,7 @@ function Login() {
 
   return (
     <div className="row justify-content-center align-items-center" style={{minHeight: "100vh"}}>
-      <div className="col-lg-3 col-md-12 mt-5">
+      <div className="col-lg-3 col-md-12">
         { error && <div className="alert alert-danger text-danger bg-dark border-danger mt-1">💥 { error }</div> }
 
         <form>
@@ -53,7 +53,7 @@ function Login() {
           { errors.password && <div className="form-text text-danger">Votre mot de passe doit au minimum contenir 6 caractères.</div> }
           
           <div className="d-grid gap-2">
-            <button className={ `btn mt-5 btn-outline-secondary` } onClick={ handleSubmit(submitLogIn) } disabled={ loading } type="submit">login</button>
+            <button className={ `btn mt-5 btn-outline-secondary` } onClick={ handleSubmit(submitLogIn) } disabled={ loading } type="submit"><i className="fa-solid fa-right-to-bracket"></i></button>
           </div>
         </form>
 

@@ -52,10 +52,10 @@ function List() {
         <div className="col-lg-6 col-md-10">
           <div className="row mb-5">
             <div className="col-9">
-              <Link to="/create" className="btn btn-outline-secondary mt-5 w-100">create</Link>
+              <Link to="/create" className="btn btn-outline-secondary mt-5 w-100"><i className="fa-solid fa-pen"></i></Link>
             </div>
             <div className="col-3">
-              <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100">logout</button>
+              <button onClick={ handleLogOut } className="btn btn-outline-secondary mt-5 w-100"><i className="fa-solid fa-right-from-bracket"></i></button>
             </div>
           </div>
 

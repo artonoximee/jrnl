@@ -12,14 +12,14 @@ function ReadItem(props) {
   }
 
   return (
-    <div className="card border-secondary text-bg-dark mb-5">
+    <div className="card border-secondary text-light mb-5">
       <div className="card-body">
         <ReactTextFormat>
           { entry.content }
         </ReactTextFormat>
       </div>
       <ul className="list-group list-group-flush">
-        <li className="list-group-item border-secondary text-bg-dark">
+        <li className="list-group-item border-secondary">
           <div className="row">
             <div className="col text-secondary">
               { entry.createdAt.substring(8,10) }-{ entry.createdAt.substring(5,7) }-{ entry.createdAt.substring(0,4) }
@@ -27,7 +27,7 @@ function ReadItem(props) {
             <div className="col text-end">
               <div className="dropdown">
                 <Link className="dropdown-toggle text-secondary text-decoration-none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  ⚙️
+                  <i className="fa-solid fa-gear"></i>
                 </Link>
                 <ul className="dropdown-menu dropdown-menu-dark border-secondary">
                   <li><Link className="dropdown-item">modify</Link></li>

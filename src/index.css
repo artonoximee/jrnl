@@ -5,19 +5,23 @@ body {
   font-family: 'Fira Code', monospace !important;
 }
 
-.form-control, .btn, .card {
-  box-shadow:  14px 14px 21px #070708,
-             -14px -14px 21px #1d1d20;
+.btn {
+  box-shadow:  7px 7px 12px #070708,
+             -7px -7px 12px #1d1d20;
 }
 
-input[type=text], textarea, .card, .dropdown-menu {
-  background-color: #252529 !important;
+.no-shadow {
+  box-shadow: none;
+}
+
+input[type=text], textarea, .card, .dropdown-menu, .list-group-item {
+  background-color: #121214 !important;
 }
 
 .form-control:focus, .form-select:focus {
   border-color: #555555 !important;
-  box-shadow:  14px 14px 21px #070708,
-             -14px -14px 21px #1d1d20 !important;
+  box-shadow:  7px 7px 12px #070708,
+              -7px -7px 12px #1d1d20 !important;
 }
 
 .rtfLink {
